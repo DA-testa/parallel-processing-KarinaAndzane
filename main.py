@@ -4,7 +4,22 @@ def parallel_processing(n, m, data):
     output = []
     # TODO: write the function for simulating parallel tasks, 
     # create the output pairs
-
+    tofw = data
+    t=[]
+    count=n
+    for i in range(0,n,1):
+        output.append((i,0))
+        t.append(0)
+        
+    while count<m:
+        for i in range (0,n,1):
+            if count ==m:
+                continue
+            number = t[count-n]+tofw[count-n]
+            t.append(number)
+            output.append((i,number))
+            count=count+1
+            
     return output
 
 def main():
@@ -28,7 +43,7 @@ def main():
 
     # TODO: create the function
     result = parallel_processing(n,m,data)
-    
+    print(result)
     # TODO: print out the results, each pair in it's own line
 
 
